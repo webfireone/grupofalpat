@@ -86,13 +86,23 @@ if (contactForm) {
             mensaje: contactForm.querySelector('textarea').value
         };
 
-        const success = await saveContactMessage(formData);
+        // Intento de envío con timeout de 10 segundos para evitar bloqueos
+        let success = false;
+        try {
+            success = await Promise.race([
+                saveContactMessage(formData),
+                new Promise((_, reject) => setTimeout(() => reject(new Error('Timeout')), 10000))
+            ]);
+        } catch (err) {
+            console.error("Error detallado del envío:", err);
+            success = false;
+        }
 
         if (success) {
             alert('¡Gracias por tu consulta! El equipo de Grupo Falpat se pondrá en contacto pronto.');
             contactForm.reset();
         } else {
-            alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos por WhatsApp.');
+            alert('No pudimos conectar con el servidor. Por favor, verifica tu conexión o intenta por WhatsApp. (Revisa la consola F12 para más detalles)');
         }
 
         submitBtn.innerHTML = originalContent;
