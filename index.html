@@ -3,153 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GRUPO FALPAT | Hormigón Elaborado, Corralón y Laboratorio</title>
-    <meta name="description" content="Grupo Falpat en Luján. Líderes en hormigón elaborado, corralón de materiales y ensayos de laboratorio. Calidad y confianza en tu obra.">
+    <title>Grupo Falpat | Innovación en Hormigón y Construcción</title>
+    <meta name="description" content="Grupo Falpat en Luján. Líderes en hormigón elaborado, corralón de materiales y ensayos de laboratorio con tecnología de vanguardia.">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animation & Icons -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-theme="light">
+
+    <div class="mesh-bg"></div>
 
     <nav id="navbar">
-        <a href="#" class="logo">Grupo <span>Falpat</span></a>
-        <div class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#galeria">Galería</a>
-            <a href="#contacto" class="btn-contact">Contactar</a>
+        <div class="container">
+            <a href="#" class="logo">Grupo <span>Falpat</span></a>
+            <div class="nav-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#galeria">Galería</a>
+                <button class="theme-toggle" id="theme-btn">
+                    <i data-lucide="sun"></i>
+                </button>
+                <a href="#contacto" class="btn btn-primary" style="padding: 0.8rem 1.5rem; font-size: 0.9rem;">Contactar</a>
+            </div>
         </div>
     </nav>
 
     <section class="hero" id="inicio">
-        <h1>CONSTRUYENDO EL FUTURO</h1>
-        <p>Hormigón elaborado de alta calidad, materiales de construcción y laboratorio técnico especializado en Luján.</p>
-        <div class="hero-btns">
-            <a href="#servicios" class="btn-primary">Nuestros Servicios</a>
-            <a href="#contacto" class="btn-secondary">Presupuesto Online</a>
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <span style="color: var(--secondary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Líderes en Luján</span>
+                <h1>Cimientos Sólidos para Grandes Ideas</h1>
+                <p>Evolucionamos la construcción con hormigón elaborado de precisión, materiales de primera línea y control de calidad certificado por expertos.</p>
+                <div class="hero-btns">
+                    <a href="#servicios" class="btn btn-primary">
+                        Explorar Servicios <i data-lucide="arrow-right"></i>
+                    </a>
+                    <a href="#contacto" class="btn" style="color: var(--text-main); border: 1px solid var(--border);">
+                        Presupuesto Online
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image-wrapper" data-aos="fade-left">
+            <img src="falpat_hero_truck.png" alt="Grupo Falpat Flota">
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item" data-aos="zoom-in">
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Años de Trayectoria</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Obras Finalizadas</p>
+                </div>
+                <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Clientes Felices</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="services" id="servicios">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <i class="fas fa-truck-monster"></i>
-                <h3>Hormigón Elaborado</h3>
-                <p>Equipamiento de última generación y logística eficiente para entregas precisas en tiempo y forma.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-warehouse"></i>
-                <h3>Corralón</h3>
-                <p>Amplio stock de materiales de construcción para todas las etapas de tu proyecto, desde cimientos hasta terminaciones.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-microscope"></i>
-                <h3>Laboratorio</h3>
-                <p>Ensayos de compresión y control de calidad riguroso para asegurar la resistencia y durabilidad del hormigón.</p>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Soluciones Integrales</h2>
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card-icon"><i data-lucide="truck"></i></div>
+                    <h3>Hormigón Elaborado</h3>
+                    <p>Logística inteligente y mezclas diseñadas a medida para cada tipo de estructura y resistencia requerida.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-icon"><i data-lucide="warehouse"></i></div>
+                    <h3>Corralón Digital</h3>
+                    <p>Todo el catálogo de materiales con stock en tiempo real y entrega inmediata en zona Luján y alrededores.</p>
+                </div>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-icon"><i data-lucide="flask-conical"></i></div>
+                    <h3>Laboratorio I+D</h3>
+                    <p>Control riguroso de probetas y ensayos de compresión para garantizar la máxima seguridad estructural.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="showcase" id="galeria">
-        <div class="showcase-grid">
-            <div class="showcase-item">
-                <img src="falpat_hero_truck.png" alt="Camión Falpat">
-                <div class="showcase-overlay">
-                    <h3>Flota Moderna</h3>
-                    <p>Unidades Mercedes-Benz listas para el servicio.</p>
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestra Pasión en Detalle</h2>
+            <div class="showcase-grid">
+                <div class="showcase-item" data-aos="fade-up">
+                    <img src="falpat_concrete_pour.png" alt="Vertido de Hormigón">
+                    <div class="showcase-content">
+                        <h3>Precisión</h3>
+                        <p>Cada m3 cuenta una historia de calidad.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="showcase-item">
-                <img src="falpat_concrete_pour.png" alt="Vertido de Hormigón">
-                <div class="showcase-overlay">
-                    <h3>Calidad en Obra</h3>
-                    <p>Precisión en cada vertido.</p>
+                <div class="showcase-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="falpat_hero_truck.png" alt="Logística Falpat">
+                    <div class="showcase-content">
+                        <h3>Logística</h3>
+                        <p>Llegamos donde otros no pueden.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="showcase-item">
-                <img src="falpat_lab_testing.png" alt="Laboratorio Falpat">
-                <div class="showcase-overlay">
-                    <h3>Control Técnico</h3>
-                    <p>Ensayos certificados en laboratorio propio.</p>
+                <div class="showcase-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="falpat_lab_testing.png" alt="Laboratorio Falpat">
+                    <div class="showcase-content">
+                        <h3>Seguridad</h3>
+                        <p>Ensayos que protegen tu inversión.</p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="testimonials">
-        <h2 class="section-title" style="color: white;">Lo que dicen nuestros clientes</h2>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <p>"Excelente servicio y puntualidad. El hormigón llegó en perfectas condiciones y la atención fue muy profesional."</p>
-                <span class="author">Juan Pérez - Arquitecto</span>
-            </div>
-            <div class="testimonial-card">
-                <p>"El corralón más completo de la zona. Siempre tienen stock y los precios son muy competitivos. Muy recomendables."</p>
-                <span class="author">María García - Constructora</span>
-            </div>
-            <div class="testimonial-card">
-                <p>"La atención técnica en el laboratorio nos dio mucha seguridad para nuestro proyecto de edificios. Calidad certificada."</p>
-                <span class="author">Roberto Gómez - Desarrollista</span>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contacto">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2>¿Tenés un proyecto?</h2>
-                <p>Contactanos para recibir un presupuesto personalizado y asesoramiento técnico sin cargo.</p>
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <div>
-                        <h4>WhatsApp</h4>
-                        <p>+54 9 2323 123456</p>
+        <div class="container">
+            <div class="contact-wrapper" data-aos="zoom-out">
+                <div class="contact-info">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Hablemos de tu Próximo Desafío</h2>
+                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Completa el formulario y un técnico especialista se pondrá en contacto contigo en menos de 24hs.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px;"><i data-lucide="phone"></i></div>
+                            <span>+54 9 2323 123456</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px;"><i data-lucide="mail"></i></div>
+                            <span>ventas@grupofalpat.com.ar</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <div class="card-icon" style="margin-bottom: 0; width: 48px; height: 48px;"><i data-lucide="map-pin"></i></div>
+                            <span>Ruta 5 km 68, Luján, BA</span>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <div>
-                        <h4>Ubicación</h4>
-                        <p>Ruta 5, Luján, Buenos Aires, Argentina</p>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Tu Nombre" required>
                     </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <h4>Email</h4>
-                        <p>info@grupofalpat.com.ar</p>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Profesional" required>
                     </div>
-                </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Cuéntanos sobre tu obra..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+                        Enviar Mensaje <i data-lucide="send"></i>
+                    </button>
+                </form>
             </div>
-            <form class="contact-form">
-                <input type="text" placeholder="Nombre completo" required>
-                <input type="email" placeholder="Email de contacto" required>
-                <input type="text" placeholder="Asunto / Tipo de Hormigón">
-                <textarea rows="5" placeholder="Mensaje / Detalles de la obra" required></textarea>
-                <button type="submit">Enviar Consulta</button>
-            </form>
         </div>
     </section>
 
-    <footer>
-        <a href="#" class="footer-logo">Grupo <span>Falpat</span></a>
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/grupofalpat/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+    <footer style="padding: 4rem 0; background: var(--bg-sub); border-top: 1px solid var(--border);">
+        <div class="container" style="text-align: center;">
+            <a href="#" class="logo" style="justify-content: center; margin-bottom: 2rem;">Grupo <span>Falpat</span></a>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
+                <a href="https://www.instagram.com/grupofalpat/" target="_blank" style="color: var(--text-muted);"><i data-lucide="instagram"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i data-lucide="facebook"></i></a>
+                <a href="#" style="color: var(--text-muted);"><i data-lucide="linkedin"></i></a>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Grupo Falpat. Innovación y Solidez. <br> Powered by Antigravity Agents.</p>
         </div>
-        <p>&copy; 2026 Grupo Falpat. Todos los derechos reservados. Diseñado por Antigravity.</p>
     </footer>
 
+    <!-- Libraries -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="main.js"></script>
 </body>
 </html>

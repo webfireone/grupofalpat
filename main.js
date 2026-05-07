@@ -1,5 +1,15 @@
 import { saveContactMessage } from './firebase-config.js';
 
+// Initialize Lucide Icons
+lucide.createIcons();
+
+// Initialize AOS (Animate On Scroll)
+AOS.init({
+    duration: 1000,
+    once: true,
+    easing: 'ease-out-cubic'
+});
+
 // Navbar scroll effect
 window.addEventListener('scroll', () => {
     const nav = document.querySelector('nav');
@@ -10,26 +20,54 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Reveal animations on scroll
-const observerOptions = {
-    threshold: 0.1
+// Dark Mode Logic
+const themeBtn = document.getElementById('theme-btn');
+const body = document.body;
+
+const toggleTheme = () => {
+    const currentTheme = body.getAttribute('data-theme');
+    const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+    body.setAttribute('data-theme', nextTheme);
+    
+    // Update icon
+    const icon = themeBtn.querySelector('i');
+    if (nextTheme === 'dark') {
+        icon.setAttribute('data-lucide', 'moon');
+    } else {
+        icon.setAttribute('data-lucide', 'sun');
+    }
+    lucide.createIcons(); // Re-render icons
 };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
+themeBtn.addEventListener('click', toggleTheme);
 
-document.querySelectorAll('.service-card, .testimonial-card, .contact-container').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
-});
+// Stats Counter Animation
+const counters = document.querySelectorAll('.counter');
+const speed = 200;
+
+const startCounter = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const count = +counter.innerText;
+    const inc = target / speed;
+
+    if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(() => startCounter(counter), 1);
+    } else {
+        counter.innerText = target + (target === 15 ? '+' : '');
+    }
+};
+
+// Intersection Observer for Stats
+const statsSection = document.querySelector('.stats');
+const statsObserver = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+        counters.forEach(counter => startCounter(counter));
+        statsObserver.unobserve(statsSection);
+    }
+}, { threshold: 0.5 });
+
+if (statsSection) statsObserver.observe(statsSection);
 
 // Firebase form submission handler
 const contactForm = document.querySelector('.contact-form');
@@ -38,14 +76,13 @@ if (contactForm) {
         e.preventDefault();
         
         const submitBtn = contactForm.querySelector('button');
-        const originalText = submitBtn.innerText;
-        submitBtn.innerText = 'Enviando...';
+        const originalContent = submitBtn.innerHTML;
+        submitBtn.innerHTML = 'Enviando... <span class="loader"></span>';
         submitBtn.disabled = true;
 
         const formData = {
             nombre: contactForm.querySelector('input[type="text"]').value,
             email: contactForm.querySelector('input[type="email"]').value,
-            asunto: contactForm.querySelectorAll('input[type="text"]')[1].value,
             mensaje: contactForm.querySelector('textarea').value
         };
 
@@ -58,7 +95,7 @@ if (contactForm) {
             alert('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos por WhatsApp.');
         }
 
-        submitBtn.innerText = originalText;
+        submitBtn.innerHTML = originalContent;
         submitBtn.disabled = false;
     });
 }

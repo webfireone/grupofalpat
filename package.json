@@ -12,6 +12,8 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
-    "firebase": "^10.0.0"
+    "aos": "^2.3.4",
+    "firebase": "^10.0.0",
+    "lucide-static": "^1.14.0"
   }
 }
