@@ -384,6 +384,10 @@ footer {
     display: inline-block;
 }
 
+.footer-logo span {
+    color: var(--secondary);
+}
+
 .footer-socials {
     display: flex;
     justify-content: center;
