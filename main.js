@@ -24,22 +24,26 @@ window.addEventListener('scroll', () => {
 const themeBtn = document.getElementById('theme-btn');
 const body = document.body;
 
+const updateIcon = (theme) => {
+    const icon = themeBtn.querySelector('i');
+    if (theme === 'dark') {
+        icon.setAttribute('data-lucide', 'sun'); // Show sun to switch to light
+    } else {
+        icon.setAttribute('data-lucide', 'moon'); // Show moon to switch to dark
+    }
+    lucide.createIcons();
+};
+
 const toggleTheme = () => {
     const currentTheme = body.getAttribute('data-theme');
     const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
     body.setAttribute('data-theme', nextTheme);
-    
-    // Update icon
-    const icon = themeBtn.querySelector('i');
-    if (nextTheme === 'dark') {
-        icon.setAttribute('data-lucide', 'moon');
-    } else {
-        icon.setAttribute('data-lucide', 'sun');
-    }
-    lucide.createIcons(); // Re-render icons
+    updateIcon(nextTheme);
 };
 
 themeBtn.addEventListener('click', toggleTheme);
+// Initialize icon based on current data-theme
+updateIcon(body.getAttribute('data-theme'));
 
 // Stats Counter Animation
 const counters = document.querySelectorAll('.counter');
