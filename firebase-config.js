@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-// Tu configuración de Firebase se mantiene intacta
 const firebaseConfig = {
   apiKey: "AIzaSyAisXGZC_EdxGooYtcnXjIPDBifn4gOnw8",
   authDomain: "grupofalpat-80428.firebaseapp.com",
@@ -12,21 +11,22 @@ const firebaseConfig = {
   measurementId: "G-LQM9S9207K"
 };
 
-// Inicializar Firebase y Firestore
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// Exportar la función de guardado de mensajes
 export const saveContactMessage = async (formData) => {
+  console.log("Intentando escribir en la colección 'contact_messages'...");
   try {
     const docRef = await addDoc(collection(db, "contact_messages"), {
       ...formData,
       timestamp: serverTimestamp()
     });
-    console.log("Mensaje guardado con ID: ", docRef.id);
+    console.log("Documento escrito con ID: ", docRef.id);
     return true;
   } catch (e) {
-    console.error("Error al añadir el mensaje: ", e);
+    console.error("Error detallado de Firestore:", e);
+    // Alertamos el error exacto para que el usuario pueda decirnos qué falla
+    alert("Error de Firebase (" + e.code + "): " + e.message);
     return false;
   }
 };
