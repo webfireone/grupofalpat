@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRUPO FALPAT | Hormigón Elaborado, Corralón y Laboratorio</title>
+    <meta name="description" content="Grupo Falpat en Luján. Líderes en hormigón elaborado, corralón de materiales y ensayos de laboratorio. Calidad y confianza en tu obra.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav id="navbar">
+        <a href="#" class="logo">FAL<span>PAT</span></a>
+        <div class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#galeria">Galería</a>
+            <a href="#contacto" class="btn-contact">Contactar</a>
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <h1>CONSTRUYENDO EL FUTURO</h1>
+        <p>Hormigón elaborado de alta calidad, materiales de construcción y laboratorio técnico especializado en Luján.</p>
+        <div class="hero-btns">
+            <a href="#servicios" class="btn-primary">Nuestros Servicios</a>
+            <a href="#contacto" class="btn-secondary">Presupuesto Online</a>
+        </div>
+    </section>
+
+    <section class="services" id="servicios">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fas fa-truck-monster"></i>
+                <h3>Hormigón Elaborado</h3>
+                <p>Equipamiento de última generación y logística eficiente para entregas precisas en tiempo y forma.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-warehouse"></i>
+                <h3>Corralón</h3>
+                <p>Amplio stock de materiales de construcción para todas las etapas de tu proyecto, desde cimientos hasta terminaciones.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microscope"></i>
+                <h3>Laboratorio</h3>
+                <p>Ensayos de compresión y control de calidad riguroso para asegurar la resistencia y durabilidad del hormigón.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase" id="galeria">
+        <div class="showcase-grid">
+            <div class="showcase-item">
+                <img src="falpat_hero_truck.png" alt="Camión Falpat">
+                <div class="showcase-overlay">
+                    <h3>Flota Moderna</h3>
+                    <p>Unidades Mercedes-Benz listas para el servicio.</p>
+                </div>
+            </div>
+            <div class="showcase-item">
+                <img src="falpat_concrete_pour.png" alt="Vertido de Hormigón">
+                <div class="showcase-overlay">
+                    <h3>Calidad en Obra</h3>
+                    <p>Precisión en cada vertido.</p>
+                </div>
+            </div>
+            <div class="showcase-item">
+                <img src="falpat_lab_testing.png" alt="Laboratorio Falpat">
+                <div class="showcase-overlay">
+                    <h3>Control Técnico</h3>
+                    <p>Ensayos certificados en laboratorio propio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <h2 class="section-title" style="color: white;">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Excelente servicio y puntualidad. El hormigón llegó en perfectas condiciones y la atención fue muy profesional."</p>
+                <span class="author">Juan Pérez - Arquitecto</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"El corralón más completo de la zona. Siempre tienen stock y los precios son muy competitivos. Muy recomendables."</p>
+                <span class="author">María García - Constructora</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"La atención técnica en el laboratorio nos dio mucha seguridad para nuestro proyecto de edificios. Calidad certificada."</p>
+                <span class="author">Roberto Gómez - Desarrollista</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>¿Tenés un proyecto?</h2>
+                <p>Contactanos para recibir un presupuesto personalizado y asesoramiento técnico sin cargo.</p>
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <div>
+                        <h4>WhatsApp</h4>
+                        <p>+54 9 2323 123456</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Ubicación</h4>
+                        <p>Ruta 5, Luján, Buenos Aires, Argentina</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@grupofalpat.com.ar</p>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Email de contacto" required>
+                <input type="text" placeholder="Asunto / Tipo de Hormigón">
+                <textarea rows="5" placeholder="Mensaje / Detalles de la obra" required></textarea>
+                <button type="submit">Enviar Consulta</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <a href="#" class="footer-logo">FAL<span>PAT</span></a>
+        <div class="footer-socials">
+            <a href="https://www.instagram.com/grupofalpat/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2026 Grupo Falpat. Todos los derechos reservados. Diseñado por Antigravity.</p>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
