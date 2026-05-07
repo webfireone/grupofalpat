@@ -78,6 +78,7 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
+        console.log("Intentando enviar mensaje a Firebase...");
         
         const submitBtn = contactForm.querySelector('button');
         const originalContent = submitBtn.innerHTML;
@@ -85,10 +86,11 @@ if (contactForm) {
         submitBtn.disabled = true;
 
         const formData = {
-            nombre: contactForm.querySelector('input[type="text"]').value,
-            email: contactForm.querySelector('input[type="email"]').value,
-            mensaje: contactForm.querySelector('textarea').value
+            nombre: document.getElementById('contact_name').value,
+            email: document.getElementById('contact_email').value,
+            mensaje: document.getElementById('contact_message').value
         };
+        console.log("Datos capturados:", formData);
 
         // Intento de envío con timeout de 10 segundos para evitar bloqueos
         let success = false;
