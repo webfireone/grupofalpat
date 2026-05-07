@@ -295,6 +295,102 @@ nav .container {
     margin-bottom: 2rem;
 }
 
+/* About Section */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 40px;
+    box-shadow: var(--shadow-premium);
+}
+
+.about-badge {
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    flex-direction: column;
+    z-index: 5;
+}
+
+.about-badge .years {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.about-badge .label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.about-content .sub-title {
+    color: var(--secondary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.about-content p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.value-item i {
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 74, 173, 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    flex-shrink: 0;
+}
+
+.value-item h4 {
+    margin-bottom: 0.3rem;
+    color: var(--text-main);
+}
+
+.value-item p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
 /* Stats Section */
 .stats {
     background: var(--primary);
@@ -400,6 +496,11 @@ nav .container {
     .hero h1 { font-size: 3.5rem; }
     .hero-image-wrapper { display: none; }
     .hero-content { max-width: 100%; text-align: center; }
+    .about-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+    .about-image { max-width: 600px; margin: 0 auto; }
+    .about-badge { right: 0; bottom: -20px; padding: 1.5rem; }
+    .section-title { text-align: center !important; }
+    .value-item { text-align: left; }
     .showcase-grid { grid-template-columns: 1fr; height: auto; }
     .contact-wrapper { grid-template-columns: 1fr; }
 }
