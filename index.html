@@ -9,7 +9,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
     
     <!-- Animation & Icons -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,7 +22,7 @@
 
     <nav id="navbar">
         <div class="container">
-            <a href="#" class="logo">Grupo <span>Falpat</span></a>
+            <a href="#" class="logo">Falpat <span class="italic-accent">Concrete</span></a>
             <div class="nav-links">
                 <a href="#inicio">Inicio</a>
                 <a href="#servicios">Servicios</a>
@@ -37,22 +37,22 @@
     </nav>
 
     <section class="hero" id="inicio">
-        <div class="container">
+        <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem;">
             <div class="hero-content" data-aos="fade-right">
-                <span style="color: var(--secondary); font-weight: 700; letter-spacing: 2px; text-transform: uppercase;">Líderes en Luján</span>
-                <h1>Cimientos Sólidos para Grandes Ideas</h1>
-                <p>Evolucionamos la construcción con hormigón elaborado de precisión, materiales de primera línea y control de calidad certificado por expertos.</p>
+                <span style="color: var(--primary); font-weight: 600; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; display: block; margin-bottom: 1rem;">Líderes en Luján</span>
+                <h1>Construyendo el <span class="italic-accent">futuro</span> del hormigón</h1>
+                <p>Evolucionamos la construcción con precisión digital, materiales de alta gama y tecnología de vanguardia certificada.</p>
                 <div class="hero-btns">
                     <a href="#servicios" class="btn btn-primary">
                         Explorar Servicios <i data-lucide="arrow-right"></i>
                     </a>
-                    <a href="#contacto" class="btn" style="color: var(--text-main); border: 1px solid var(--border);">
+                    <a href="#contacto" class="btn btn-secondary">
                         Presupuesto Online
                     </a>
                 </div>
             </div>
             <div class="hero-image-wrapper" data-aos="fade-left">
-                <img src="falpat_hero_truck.png" alt="Grupo Falpat Flota">
+                <img src="futuristic_concrete_hero.png" alt="Futuristic Concrete Construction">
             </div>
         </div>
     </section>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="about-content" data-aos="fade-left">
                     <span class="sub-title">Nuestra Historia</span>
-                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Compromiso con la <br><span>Solidez Argentina</span></h2>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Compromiso con la <br><span>solidez</span></h2>
                     <p>En <strong>Grupo Falpat</strong>, nacimos en Luján con un propósito claro: elevar los estándares de la construcción en la región. Lo que comenzó como un sueño familiar se ha convertido hoy en un referente de innovación y confianza.</p>
                     <p>Nos especializamos en la producción de hormigón elaborado y la provisión de materiales de construcción, respaldados por un laboratorio técnico de vanguardia que garantiza que cada metro cúbico cumpla con las normativas más exigentes.</p>
                     
@@ -161,6 +161,13 @@
                         <p>Ensayos que protegen tu inversión.</p>
                     </div>
                 </div>
+                <div class="showcase-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="falpat_about.png" alt="Planta Falpat">
+                    <div class="showcase-content">
+                        <h3>Infraestructura</h3>
+                        <p>Capacidad para grandes desafíos.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -169,8 +176,8 @@
         <div class="container">
             <div class="contact-wrapper" data-aos="zoom-out">
                 <div class="contact-info">
-                    <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Hablemos de tu Próximo Desafío</h2>
-                    <p style="margin-bottom: 2rem; color: var(--text-muted);">Completa el formulario y un técnico especialista se pondrá en contacto contigo en menos de 24hs.</p>
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">¿Listo para <br><span>empezar?</span></h2>
+                    <p style="margin-bottom: 3rem; color: var(--text-muted); font-size: 1.1rem;">Nuestros expertos técnicos están listos para asesorarte en tu próximo desafío estructural.</p>
                     
                     <div style="display: flex; flex-direction: column; gap: 1.5rem;">
                         <div style="display: flex; align-items: center; gap: 1rem;">
@@ -205,15 +212,25 @@
         </div>
     </section>
 
-    <footer style="padding: 4rem 0; background: var(--bg-sub); border-top: 1px solid var(--border);">
-        <div class="container" style="text-align: center;">
-            <a href="#" class="logo" style="justify-content: center; margin-bottom: 2rem;">Grupo <span>Falpat</span></a>
-            <div style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem;">
-                <a href="https://www.instagram.com/grupofalpat/" target="_blank" style="color: var(--text-muted);"><i data-lucide="instagram"></i></a>
-                <a href="#" style="color: var(--text-muted);"><i data-lucide="facebook"></i></a>
-                <a href="#" style="color: var(--text-muted);"><i data-lucide="linkedin"></i></a>
+    <footer>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                <a href="#" class="logo">Falpat <span class="italic-accent">Concrete</span></a>
+                <div class="footer-links" style="display: flex; gap: 2rem;">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#galeria">Galería</a>
+                </div>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="https://www.instagram.com/grupofalpat/" target="_blank" style="color: var(--text-muted);"><i data-lucide="instagram"></i></a>
+                    <a href="#" style="color: var(--text-muted);"><i data-lucide="facebook"></i></a>
+                    <a href="#" style="color: var(--text-muted);"><i data-lucide="linkedin"></i></a>
+                </div>
             </div>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">&copy; 2026 Grupo Falpat. Innovación y Solidez. <br> Powered by Antigravity Agents.</p>
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); text-align: center;">
+                <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 Grupo Falpat. Construcción de Vanguardia. <br> Powered by Antigravity Agents.</p>
+            </div>
         </div>
     </footer>
 
