@@ -1,11 +1,7 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// Tu configuración de Firebase se mantiene intacta
 const firebaseConfig = {
   apiKey: "AIzaSyAisXGZC_EdxGooYtcnXjIPDBifn4gOnw8",
   authDomain: "grupofalpat-80428.firebaseapp.com",
@@ -16,6 +12,21 @@ const firebaseConfig = {
   measurementId: "G-LQM9S9207K"
 };
 
-// Initialize Firebase
+// Inicializar Firebase y Firestore
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+// Exportar la función de guardado de mensajes
+export const saveContactMessage = async (formData) => {
+  try {
+    const docRef = await addDoc(collection(db, "contact_messages"), {
+      ...formData,
+      timestamp: serverTimestamp()
+    });
+    console.log("Mensaje guardado con ID: ", docRef.id);
+    return true;
+  } catch (e) {
+    console.error("Error al añadir el mensaje: ", e);
+    return false;
+  }
+};
