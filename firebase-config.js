@@ -1,30 +1,21 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-// TODO: Reemplazar con las credenciales del usuario desde la consola de Firebase
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAisXGZC_EdxGooYtcnXjIPDBifn4gOnw8",
+  authDomain: "grupofalpat-80428.firebaseapp.com",
+  projectId: "grupofalpat-80428",
+  storageBucket: "grupofalpat-80428.firebasestorage.app",
+  messagingSenderId: "730249631470",
+  appId: "1:730249631470:web:32739ab9123cf53f6a05ff",
+  measurementId: "G-LQM9S9207K"
 };
 
-// Inicializar Firebase
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-export const saveContactMessage = async (formData) => {
-  try {
-    const docRef = await addDoc(collection(db, "contact_messages"), {
-      ...formData,
-      timestamp: serverTimestamp()
-    });
-    console.log("Mensaje guardado con ID: ", docRef.id);
-    return true;
-  } catch (e) {
-    console.error("Error al añadir el mensaje: ", e);
-    return false;
-  }
-};
+const analytics = getAnalytics(app);
